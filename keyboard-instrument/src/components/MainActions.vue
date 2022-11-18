@@ -15,7 +15,7 @@ export default {
   methods: {
     addNewKey() {
       this.store.keys.push({
-        key: "a",
+        key: "L",
         type: "Frequency"
       });
     },

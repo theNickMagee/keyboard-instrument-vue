@@ -2,22 +2,22 @@ import { reactive } from 'vue';
 
 export const store = reactive({
     keys: [{
-        key: "a",
+        key: "A",
         type: "Frequency"
     },
     {
-        key: "b",
+        key: "B",
         type: "Tone"
     },
     ],
     presets: [{
         name: "Subwoofer",
         keys: [{
-            key: "z",
+            key: "Z",
             type: "Tone"
         },
         {
-            key: "r",
+            key: "R",
             type: "Clip"
         },
         ]
@@ -25,19 +25,31 @@ export const store = reactive({
     {
         name: "Alphabet Scale",
         keys: [{
-            key: "a",
+            key: "A",
             type: "Frequency"
         },
         {
-            key: "b",
+            key: "B",
             type: "Frequency"
         },
         {
-            key: "c",
+            key: "C",
             type: "Frequency"
         },
         {
-            key: "d",
+            key: "D",
+            type: "Frequency"
+        },
+        {
+            key: "E",
+            type: "Frequency"
+        },
+        {
+            key: "F",
+            type: "Frequency"
+        },
+        {
+            key: "G",
             type: "Frequency"
         }
 

@@ -19,7 +19,7 @@ export default {
 
     <div class="card" v-for="key in this.store.keys">
       <div class="">
-        <select class="base-sel dd-bg" v-model="selected" @change="onSelect(selected)">
+        <select class="base-sel dd-bg" v-model="key.key" @change="onSelect(selected)">
           <option disabled value="">Please Select</option>
           <option v-for="option in this.keyOptions" :value="option">{{ option }}</option>
         </select>

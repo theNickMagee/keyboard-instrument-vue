@@ -11,12 +11,7 @@ export default {
         };
     },
     methods: {
-        addNewKey() {
-            this.keys.push({
-                key: "a",
-                type: "Frequency"
-            });
-        }
+
     },
     components: { KeyBindings, MainActions }
 }
