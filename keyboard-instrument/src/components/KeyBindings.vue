@@ -41,6 +41,7 @@ export default {
             <a class="" v-on:click="changeType(key.key, `Frequency`)">Frequency</a>
             <a class="" v-on:click="changeType(key.key, `Clip`)">File/Clip</a>
             <a class="" v-on:click="changeType(key.key, `MIDI`)">MIDI</a>
+            <a class="" v-on:click="changeType(key.key, `casio`)">Casio</a>
           </div>
         </div>
       </div>

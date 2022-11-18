@@ -3,6 +3,7 @@ import KeyBindings from './components/KeyBindings.vue';
 import MainActions from './components/MainActions.vue';
 import KeyListener from './components/KeyListener.vue';
 import { store } from './state/store.js';
+import keyServices from './services/keyServices';
 
 export default {
     data() {
@@ -12,10 +13,15 @@ export default {
     },
     methods: {
         keyDown(details) {
-            console.log("keyDown: ", details)
+            // unfortunate: this gets called a bunch when we hold a key down :( means were gonna have to do some event checking
+            // console.log("keyDown: ", details)
+            keyServices.handleKeyDown(details.key.toUpperCase());
+        },
+        keyUp(details) {
+            // console.log("keyUp: ", details)
         }
     },
-    components: { KeyBindings, MainActions }
+    components: { KeyBindings, MainActions, KeyListener }
 }
 </script>
 
@@ -23,7 +29,7 @@ export default {
     <main>
         <MainActions />
         <KeyBindings />
-        <KeyListener />
+        <KeyListener v-on:keyup="keyUp" v-on:keydown="keyDown" />
     </main>
 </template>
 

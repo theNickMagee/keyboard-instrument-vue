@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 export const store = reactive({
     keys: [{
         key: "A",
-        type: "Frequency"
+        type: "casio"
     },
     {
         key: "B",
@@ -23,34 +23,34 @@ export const store = reactive({
         ]
     },
     {
-        name: "Alphabet Scale",
+        name: "Alphabet Casio Scale",
         keys: [{
             key: "A",
-            type: "Frequency"
+            type: "casio"
         },
         {
             key: "B",
-            type: "Frequency"
+            type: "casio"
         },
         {
             key: "C",
-            type: "Frequency"
+            type: "casio"
         },
         {
             key: "D",
-            type: "Frequency"
+            type: "casio"
         },
         {
             key: "E",
-            type: "Frequency"
+            type: "casio"
         },
         {
             key: "F",
-            type: "Frequency"
+            type: "casio"
         },
         {
             key: "G",
-            type: "Frequency"
+            type: "casio"
         }
 
         ]
