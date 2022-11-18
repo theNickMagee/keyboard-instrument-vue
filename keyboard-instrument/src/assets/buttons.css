@@ -1,0 +1,20 @@
+@import './base.css';
+
+.main-button,
+.secondary-button, .preset-sel {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 10px;
+}
+
+.main-button{
+    background-color: var(--primary-color);
+
+}
+
+.secondary-button{
+    background-color: var(--secondary-color);
+
+}
