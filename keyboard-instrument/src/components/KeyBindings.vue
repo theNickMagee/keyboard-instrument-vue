@@ -1,11 +1,13 @@
 <script>
 
 import { store } from '../state/store.js'
+import { keyOptions } from '../assets/constants';
 
 export default {
   data() {
     return {
-      store
+      store,
+      keyOptions
     }
   }
 }
@@ -13,43 +15,48 @@ export default {
 
 
 <template>
-    <div  class="card-container">
+  <div class="card-container">
 
-  <div class="card" v-for="key in this.store.keys">
-    <div>
-        <div>
-            Key
-        </div>
-        <div>
-            A
-        </div>
-    </div>  
-    <div class="dropdown">
+    <div class="card" v-for="key in this.store.keys">
+      <div class="">
+        <select class="base-sel dd-bg" v-model="selected" @change="onSelect(selected)">
+          <option disabled value="">Please Select</option>
+          <option v-for="option in this.keyOptions" :value="option">{{ option }}</option>
+        </select>
+        <!-- <span style="padding-left:5%">Your Choice is: {{selected}}</span> -->
+      </div>
+      <div class="dropdown">
         <button class="dropbtn">Type</button>
         <div class="dropdown-content">
-            <a href="#">Frequency</a>
-            <a href="#">File/Clip</a>
+          <a href="#">Frequency</a>
+          <a href="#">File/Clip</a>
         </div>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <style scoped>
-.card-container{
+.card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.card{
+
+.card {
   /* background-color: aqua; */
   margin: 25px;
-  width: 200px;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   background-color: var(--vt-c-divider-dark-2);
   padding: 24px 12px;
 }
+
+.dd-bg {
+  background-color: rgb(127, 127, 127)
+}
+
 .dropbtn {
   background-color: #4CAF50;
   color: white;
@@ -71,7 +78,7 @@ export default {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -84,7 +91,9 @@ export default {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
