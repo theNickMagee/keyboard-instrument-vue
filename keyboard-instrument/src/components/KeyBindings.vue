@@ -9,27 +9,39 @@ export default {
       store,
       keyOptions
     }
+  },
+  methods: {
+    changeType(key, type) {
+      this.store.keys.find((k, i) => {
+        if (k.key === key) {
+          this.store.keys[i].type = type;
+        }
+      })
+    }
   }
 }
 </script>
 
 
 <template>
-  <div class="card-container">
+  <div>
+    <div class="card-container">
 
-    <div class="card" v-for="key in this.store.keys">
-      <div class="">
-        <select class="base-sel dd-bg" v-model="key.key" @change="onSelect(selected)">
-          <option disabled value="">Please Select</option>
-          <option v-for="option in this.keyOptions" :value="option">{{ option }}</option>
-        </select>
-        <!-- <span style="padding-left:5%">Your Choice is: {{selected}}</span> -->
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Type</button>
-        <div class="dropdown-content">
-          <a href="#">Frequency</a>
-          <a href="#">File/Clip</a>
+      <div class="card" v-for="key in this.store.keys">
+        <div class="">
+          <select class="base-sel dd-bg" v-model="key.key">
+            <option disabled value="">Please Select</option>
+            <option v-for="option in this.keyOptions" :value="option">{{ option }}</option>
+          </select>
+          <!-- <span style="padding-left:5%">Your Choice is: {{selected}}</span> -->
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">{{ key.type }}</button>
+          <div class="dropdown-content">
+            <a class="" v-on:click="changeType(key.key, `Frequency`)">Frequency</a>
+            <a class="" v-on:click="changeType(key.key, `Clip`)">File/Clip</a>
+            <a class="" v-on:click="changeType(key.key, `MIDI`)">MIDI</a>
+          </div>
         </div>
       </div>
     </div>
@@ -86,13 +98,14 @@ export default {
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
+  cursor: pointer;
   text-decoration: none;
   display: block;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #f1f1f1
+  background-color: #f1f1f1;
 }
 
 /* Show the dropdown menu on hover */

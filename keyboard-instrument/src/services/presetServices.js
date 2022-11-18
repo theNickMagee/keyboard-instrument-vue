@@ -24,7 +24,7 @@ export default {
             localStorage.presets = JSON.stringify(store.presets);
         },
         loadPreset(p) {
-            store.keys = p.keys.map((x) => x);
+            store.keys = JSON.parse(JSON.stringify(p.keys));
             store.currentPresetName = JSON.parse(JSON.stringify(p.name));
         },
     },
