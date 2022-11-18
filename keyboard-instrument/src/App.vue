@@ -7,7 +7,7 @@ import { store } from './state/store.js';
 export default {
     data() {
         return {
-            store
+            store,
         };
     },
     methods: {
@@ -18,19 +18,19 @@ export default {
             });
         }
     },
-    components: { KeyBindings, MainActions}
+    components: { KeyBindings, MainActions }
 }
 </script>
 
 <template>
 
 
-  <main>
-    
-      <MainActions />
+    <main>
 
-    <KeyBindings />
-  </main>
+        <MainActions />
+
+        <KeyBindings />
+    </main>
 </template>
 
 <style scoped>
