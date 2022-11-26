@@ -18,6 +18,7 @@ export default {
             keyServices.handleKeyDown(details.key.toUpperCase());
         },
         keyUp(details) {
+            // keyServices.handleKeyRelease(details.key.toUpperCase());
             // console.log("keyUp: ", details)
         }
     },

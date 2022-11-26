@@ -3,23 +3,23 @@ import { reactive } from 'vue';
 export const store = reactive({
     keys: [{
         key: "A",
-        type: "casio"
+        type: "Frequency"
     },
     {
-        key: "B",
-        type: "Tone"
-    },
+        key: "S",
+        type: "Sampler"
+    }
     ],
     presets: [{
-        name: "Subwoofer",
+        name: "Type Showcase",
         keys: [{
-            key: "Z",
-            type: "Tone"
+            key: "A",
+            type: "Frequency"
         },
         {
-            key: "R",
-            type: "Clip"
-        },
+            key: "S",
+            type: "Sampler"
+        }
         ]
     },
     {

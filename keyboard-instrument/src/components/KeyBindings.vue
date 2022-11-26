@@ -39,9 +39,10 @@ export default {
           <button class="dropbtn">{{ key.type }}</button>
           <div class="dropdown-content">
             <a class="" v-on:click="changeType(key.key, `Frequency`)">Frequency</a>
-            <a class="" v-on:click="changeType(key.key, `Clip`)">File/Clip</a>
-            <a class="" v-on:click="changeType(key.key, `MIDI`)">MIDI</a>
-            <a class="" v-on:click="changeType(key.key, `casio`)">Casio</a>
+            <!-- <a class="" v-on:click="changeType(key.key, `Clip`)">File/Clip</a> -->
+            <!-- <a class="" v-on:click="changeType(key.key, `MIDI`)">MIDI</a> -->
+            <!-- <a class="" v-on:click="changeType(key.key, `casio`)">Casio</a> -->
+            <a class="" v-on:click="changeType(key.key, `Sampler`)">Sampler</a>
           </div>
         </div>
       </div>
