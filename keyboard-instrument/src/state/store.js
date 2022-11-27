@@ -3,7 +3,10 @@ import { reactive } from 'vue';
 export const store = reactive({
     keys: [{
         key: "A",
-        type: "Frequency"
+        type: "Frequency",
+        options: {
+            hz: 500
+        }
     },
     {
         key: "S",
@@ -14,7 +17,10 @@ export const store = reactive({
         name: "Type Showcase",
         keys: [{
             key: "A",
-            type: "Frequency"
+            type: "Frequency",
+            options: {
+                hz: 500
+            }
         },
         {
             key: "S",
