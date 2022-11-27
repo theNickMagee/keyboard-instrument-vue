@@ -21,8 +21,10 @@ export default {
 
     handleKeyRelease(letter) {
         let k = this.findKeyWithLetter(letter);
-        if (k.type === 'Frequency' && k.playing) {
-            k.playing = false;
+        if (k) {
+            if (k.type === 'Frequency' && k.playing) {
+                k.playing = false;
+            }
         }
     },
 

@@ -29,34 +29,55 @@ export const store = reactive({
         ]
     },
     {
-        name: "Alphabet Casio Scale",
+        name: "Alphabet Frequency Scale",
         keys: [{
             key: "A",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 110
+            }
         },
         {
             key: "B",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 123.47
+            }
         },
         {
             key: "C",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 65.41
+            }
         },
         {
             key: "D",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 73.42
+            }
         },
         {
             key: "E",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 82.41
+            }
         },
         {
             key: "F",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 87.31
+            }
         },
         {
             key: "G",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 98
+            }
         }
 
         ]
