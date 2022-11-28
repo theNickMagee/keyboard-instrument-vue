@@ -58,7 +58,7 @@ export default {
 
     },
     cancelScheduledLoop(k) {
-        let looper = keyServices.findKeyWithLetter(k.key).looper;
+        let looper = keyServices.findKeyWithLetter(k.key).options.looper;
         looper.stop()
     }
 
