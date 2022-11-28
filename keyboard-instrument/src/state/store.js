@@ -14,7 +14,10 @@ export const store = reactive({
         type: "Sampler",
         options: {
             type: "Bongo Snare",
-            note: "C1"
+            note: "C1",
+            volume: 1,
+            duration: 0.5,
+            velocity: 1
         }
     }
     ],
@@ -39,7 +42,10 @@ export const store = reactive({
             type: "Sampler",
             options: {
                 type: "Bongo Snare",
-                note: "C1"
+                note: "C1",
+                volume: 1,
+                duration: 0.5,
+                velocity: 1
             }
         },
         {
@@ -47,7 +53,10 @@ export const store = reactive({
             type: "Sampler",
             options: {
                 type: "Bongo Kick",
-                note: "C1"
+                note: "C1",
+                volume: 1,
+                duration: 0.5,
+                velocity: 1
             }
         }
         ]
