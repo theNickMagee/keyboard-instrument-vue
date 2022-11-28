@@ -57,6 +57,14 @@ const samplerTypes = [{
         baseUrl: "https://tonejs.github.io/audio/drum-samples/CR78/",
 
     }).toDestination()
+}, {
+    name: "Me", sampler: new Tone.Sampler({
+        urls: {
+            C1: "me.mp3",
+        },
+        baseUrl: "https://github.com/theNickMagee/keyboard-instrument-vue/tree/master/keyboard-instrument/src/assets/audio/",
+
+    }).toDestination()
 }];
 
 export { keyOptions, types, samplerTypes }
