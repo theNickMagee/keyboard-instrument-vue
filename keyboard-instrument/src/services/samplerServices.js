@@ -27,19 +27,30 @@ export default {
         sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, Tone.now(), k.options.velocity);
     },
     scheduleSamplePlay(k) {
-        console.log("scheduling: ", k)
         const sampler = samplerTypes.find((e) => {
             return e.name === k.options.type;
         });
 
+        let key = keyServices.findKeyWithLetter(k.key);
+
+
+
 
         //play a note every quarter-note
-        let loopA = new Tone.Loop(time => {
-            sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, time);
-        }, "4n").start(0);
+        let loop = new Tone.Loop(time => {
 
-        let key = keyServices.findKeyWithLetter(k.key);
-        k.looper = loopA;
+            for (let i = 0; i < key.options.padsSet.length; i++) {
+
+                sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, time + key.options.padsSet[i] * sampler.sampler.toSeconds("16n"));
+            }
+
+        }, "1n").start();
+
+        key.options.looper = loop;
+
+
+
+
 
         Tone.start();
         Tone.Transport.start()

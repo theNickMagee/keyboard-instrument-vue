@@ -19,7 +19,8 @@ export const store = reactive({
             duration: 0.5,
             velocity: 1,
             loop: false,
-            padsSet: [1, 8]
+            padsSet: [1, 8],
+            looper: {}
         }
     }
     ],

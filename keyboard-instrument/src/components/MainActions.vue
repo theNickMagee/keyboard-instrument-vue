@@ -23,7 +23,9 @@ export default {
           volume: 1,
           duration: 0.5,
           velocity: 1,
-          padsSet: [1, 9]
+          loop: false,
+          padsSet: [1, 8],
+          looper: {}
         }
       });
     },

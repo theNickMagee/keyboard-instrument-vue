@@ -27,7 +27,8 @@ export default {
 </script>
 
 <template>
-    <div class="pad" :class="{ on: this.parentKey.options.padsSet.includes(this.n) }" @click="togglePad">
+    <div class="pad" :class="{ on: this.parentKey.options.padsSet && this.parentKey.options.padsSet.includes(this.n) }"
+        @click="togglePad">
         {{ n }}
     </div>
 </template>
