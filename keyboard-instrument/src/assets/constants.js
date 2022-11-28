@@ -62,7 +62,7 @@ const samplerTypes = [{
         urls: {
             C1: "me.mp3",
         },
-        baseUrl: "https://github.com/theNickMagee/keyboard-instrument-vue/tree/master/keyboard-instrument/src/assets/audio/",
+        baseUrl: "https://audio-assets-ncm-free.s3.amazonaws.com/",
 
     }).toDestination()
 }];

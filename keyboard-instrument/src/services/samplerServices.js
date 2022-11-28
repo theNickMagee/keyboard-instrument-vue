@@ -41,7 +41,7 @@ export default {
 
             for (let i = 0; i < key.options.padsSet.length; i++) {
 
-                sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, time + key.options.padsSet[i] * sampler.sampler.toSeconds("16n"));
+                sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, Math.ceil(time) + key.options.padsSet[i] * sampler.sampler.toSeconds("16n"));
             }
 
         }, "1n").start();
