@@ -4,4 +4,7 @@ const keyOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 const types = [
     { name: "Sampler" }, { name: "Frequency" }
 ]
-export { keyOptions, types }
+
+const samplerTypes = ["Casio", "Bongo Kick", "Bongo Snare"];
+
+export { keyOptions, types, samplerTypes }

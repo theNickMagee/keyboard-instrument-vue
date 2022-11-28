@@ -3,6 +3,7 @@
 import { store } from '../state/store.js'
 import { keyOptions } from '../assets/constants';
 import FrequencyOptions from './options/FrequencyOptions.vue';
+import SamplerOptions from './options/SamplerOptions.vue';
 
 export default {
     data() {
@@ -21,7 +22,7 @@ export default {
         }
     },
     props: ['val'],
-    components: { FrequencyOptions }
+    components: { FrequencyOptions, SamplerOptions }
 }
 </script>
 
@@ -52,7 +53,7 @@ export default {
             <FrequencyOptions :parent="this.val" />
         </div>
         <div v-else-if="this.val.type === 'Sampler'">
-            Sampler Options
+            <SamplerOptions :parent="this.val" />
         </div>
         <div v-else>
             No Options
@@ -125,9 +126,5 @@ export default {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
-}
-
-.dd-bg {
-    background-color: rgb(127, 127, 127)
 }
 </style>
