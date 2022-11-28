@@ -3,6 +3,7 @@
 import { store } from '../state/store.js'
 import { samplerTypes } from "../assets/constants";
 import * as Tone from 'tone'
+import keyServices from './keyServices.js';
 
 
 export default {
@@ -20,12 +21,34 @@ export default {
         // loop through the samplers and get the right sampler
         // 
         const sampler = samplerTypes.find((e) => {
-            console.log(e.name === k.options.type)
             return e.name === k.options.type;
         });
-        console.log("found: ", sampler)
         sampler.sampler.volume.value = k.options.volume;
         sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, Tone.now(), k.options.velocity);
     },
+    scheduleSamplePlay(k) {
+        console.log("scheduling: ", k)
+        const sampler = samplerTypes.find((e) => {
+            return e.name === k.options.type;
+        });
+
+
+        //play a note every quarter-note
+        let loopA = new Tone.Loop(time => {
+            sampler.sampler.triggerAttackRelease(k.options.note, k.options.duration, time);
+        }, "4n").start(0);
+
+        let key = keyServices.findKeyWithLetter(k.key);
+        k.looper = loopA;
+
+        Tone.start();
+        Tone.Transport.start()
+
+
+    },
+    cancelScheduledLoop(k) {
+        let looper = keyServices.findKeyWithLetter(k.key).looper;
+        looper.stop()
+    }
 
 }

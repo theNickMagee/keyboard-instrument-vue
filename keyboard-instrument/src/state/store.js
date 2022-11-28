@@ -17,7 +17,9 @@ export const store = reactive({
             note: "C1",
             volume: 1,
             duration: 0.5,
-            velocity: 1
+            velocity: 1,
+            loop: false,
+            padsSet: [1, 8]
         }
     }
     ],
@@ -57,6 +59,7 @@ export const store = reactive({
                 volume: 1,
                 duration: 0.5,
                 velocity: 1
+
             }
         }
         ]
