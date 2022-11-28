@@ -27,6 +27,10 @@ export default {
             store.keys = JSON.parse(JSON.stringify(p.keys));
             store.currentPresetName = JSON.parse(JSON.stringify(p.name));
         },
+        loadPresets() {
+            store.presets = JSON.parse(localStorage.getItem("presets"))
+            console.log("from storage: ", JSON.parse(localStorage.getItem("presets")))
+        }
     },
 }
 

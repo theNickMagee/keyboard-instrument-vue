@@ -20,6 +20,7 @@
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
 
+  --loop-button-color: rgb(204, 97, 168);
   --primary-color: rgb(0, 35, 189);
   --secondary-color: rgb(7, 149, 59);
 }

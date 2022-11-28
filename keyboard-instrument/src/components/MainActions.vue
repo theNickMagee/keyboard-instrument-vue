@@ -15,12 +15,25 @@ export default {
   methods: {
     addNewKey() {
       this.store.keys.push({
-        key: "L",
-        type: "Frequency"
+        key: "A",
+        type: "Sampler",
+        options: {
+          type: "Bongo Snare",
+          note: "C1",
+          volume: 1,
+          duration: 0.5,
+          velocity: 1,
+          loop: false,
+          padsSet: [1, 8],
+          looper: {}
+        }
       });
     },
     savePreset() {
       presetServices.methods.savePreset();
+    },
+    loadPresets() {
+      presetServices.methods.loadPresets();
     }
   },
   components: { EditableTextField, PresetDropDown }
@@ -41,7 +54,7 @@ export default {
       </div>
     </div>
     <div class="header-row ">
-      <div></div>
+      <div class="secondary-button " @click="loadPresets">Load Presets</div>
       <div class="main-button " @click="addNewKey">Add Key</div>
     </div>
 

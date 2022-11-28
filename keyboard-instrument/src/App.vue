@@ -5,6 +5,7 @@ import KeyListener from './components/KeyListener.vue';
 import { store } from './state/store.js';
 import keyServices from './services/keyServices';
 
+
 export default {
     data() {
         return {
@@ -18,6 +19,7 @@ export default {
             keyServices.handleKeyDown(details.key.toUpperCase());
         },
         keyUp(details) {
+            keyServices.handleKeyRelease(details.key.toUpperCase());
             // console.log("keyUp: ", details)
         }
     },

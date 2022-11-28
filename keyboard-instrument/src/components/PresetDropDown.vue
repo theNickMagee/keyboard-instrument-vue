@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       selected: '',
-      options: store.presets
+      store
     };
   },
   methods: {
@@ -24,7 +24,7 @@ export default {
   <div class="base-dd">
     <select class="base-sel" v-model="selected" @change="onSelect(selected)">
       <option disabled value="">Please Select</option>
-      <option v-for="option in options" :value="option">{{ option.name }}</option>
+      <option v-for="option in store.presets" :value="option">{{ option.name }}</option>
     </select>
     <!-- <span style="padding-left:5%">Your Choice is: {{selected}}</span> -->
   </div>

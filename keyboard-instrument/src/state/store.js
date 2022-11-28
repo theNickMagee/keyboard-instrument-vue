@@ -1,56 +1,121 @@
 import { reactive } from 'vue';
 
+
 export const store = reactive({
     keys: [{
         key: "A",
-        type: "casio"
+        type: "Frequency",
+        options: {
+            hz: 500
+        }
     },
     {
-        key: "B",
-        type: "Tone"
-    },
+        key: "S",
+        type: "Sampler",
+        options: {
+            type: "Bongo Snare",
+            note: "C1",
+            volume: 1,
+            duration: 0.5,
+            velocity: 1,
+            loop: false,
+            padsSet: [1, 8],
+            looper: {}
+        }
+    }
     ],
     presets: [{
-        name: "Subwoofer",
-        keys: [{
-            key: "Z",
-            type: "Tone"
-        },
-        {
-            key: "R",
-            type: "Clip"
-        },
-        ]
-    },
-    {
-        name: "Alphabet Casio Scale",
+        name: "Type Showcase",
         keys: [{
             key: "A",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 500
+            }
+        },
+        {
+            key: "S",
+            type: "Sampler"
+        }
+        ]
+    }, {
+        name: "Bongos",
+        keys: [{
+            key: "A",
+            type: "Sampler",
+            options: {
+                type: "Bongo Snare",
+                note: "C1",
+                volume: 1,
+                duration: 0.5,
+                velocity: 1
+            }
+        },
+        {
+            key: "S",
+            type: "Sampler",
+            options: {
+                type: "Bongo Kick",
+                note: "C1",
+                volume: 1,
+                duration: 0.5,
+                velocity: 1
+
+            }
+        }
+        ]
+    },
+
+    {
+        name: "Alphabet Frequency Scale",
+        keys: [{
+            key: "A",
+            type: "Frequency",
+            options: {
+                hz: 110
+            }
         },
         {
             key: "B",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 123.47
+            }
         },
         {
             key: "C",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 65.41
+            }
         },
         {
             key: "D",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 73.42
+            }
         },
         {
             key: "E",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 82.41
+            }
         },
         {
             key: "F",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 87.31
+            }
         },
         {
             key: "G",
-            type: "casio"
+            type: "Frequency",
+            options: {
+                hz: 98
+            }
         }
 
         ]
