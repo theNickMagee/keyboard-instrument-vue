@@ -1,5 +1,5 @@
 import { reactive } from 'vue';
-import { samplerTypes } from '../assets/constants';
+
 
 export const store = reactive({
     keys: [{
@@ -13,7 +13,8 @@ export const store = reactive({
         key: "S",
         type: "Sampler",
         options: {
-            type: "Bongo Snare"
+            type: "Bongo Snare",
+            note: "C1"
         }
     }
     ],
@@ -37,14 +38,16 @@ export const store = reactive({
             key: "A",
             type: "Sampler",
             options: {
-                type: "Bongo Snare"
+                type: "Bongo Snare",
+                note: "C1"
             }
         },
         {
             key: "S",
             type: "Sampler",
             options: {
-                type: "Bongo Kick"
+                type: "Bongo Kick",
+                note: "C1"
             }
         }
         ]
