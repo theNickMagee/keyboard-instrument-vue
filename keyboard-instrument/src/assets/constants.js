@@ -33,6 +33,30 @@ const samplerTypes = [{
         baseUrl: "https://tonejs.github.io/audio/drum-samples/Bongos/",
 
     }).toDestination()
+}, {
+    name: "Salamander", sampler: new Tone.Sampler({
+        urls: {
+            C1: "C1.mp3",
+        },
+        baseUrl: "https://tonejs.github.io/audio/salamander/",
+
+    }).toDestination()
+}, {
+    name: "Kalimba", sampler: new Tone.Sampler({
+        urls: {
+            C1: "Kalimba_1.mp3",
+        },
+        baseUrl: "https://tonejs.github.io/audio/berklee/",
+
+    }).toDestination()
+}, {
+    name: "CR Hihat", sampler: new Tone.Sampler({
+        urls: {
+            C1: "hihat.mp3",
+        },
+        baseUrl: "https://tonejs.github.io/audio/drum-samples/CR78/",
+
+    }).toDestination()
 }];
 
 export { keyOptions, types, samplerTypes }
