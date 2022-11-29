@@ -19,6 +19,12 @@ export default {
                     this.store.keys[i].type = type;
                 }
             })
+        },
+        deleteKey() {
+            const index = this.store.keys.indexOf(this.val);
+            if (index > -1) { // only splice array when item is found
+                this.store.keys.splice(index, 1); // 2nd parameter means remove one item only
+            }
         }
     },
     props: ['val'],
@@ -47,6 +53,7 @@ export default {
                     <a class="" v-on:click="changeType(this.val.key, `Sampler`)">Sampler</a>
                 </div>
             </div>
+            <div class="delete-button" v-on:click="deleteKey">X</div>
         </div>
         <!-- Options here -->
         <div v-if="this.val.type === 'Frequency'">
@@ -70,6 +77,12 @@ export default {
     background-color: var(--vt-c-divider-dark-2);
 
 
+}
+
+.delete-button {
+    background-color: #ff7272;
+    height: 25px;
+    margin-top: 2px;
 }
 
 .basic-dds {

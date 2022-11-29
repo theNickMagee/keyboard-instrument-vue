@@ -2,27 +2,21 @@ import { reactive } from 'vue';
 
 
 export const store = reactive({
-    keys: [{
-        key: "A",
-        type: "Frequency",
-        options: {
-            hz: 500
+    keys: [
+        {
+            key: "S",
+            type: "Sampler",
+            options: {
+                type: "Bongo Snare",
+                note: "C1",
+                volume: 1,
+                duration: 0.5,
+                velocity: 1,
+                loop: false,
+                padsSet: [1, 8],
+                looper: {}
+            }
         }
-    },
-    {
-        key: "S",
-        type: "Sampler",
-        options: {
-            type: "Bongo Snare",
-            note: "C1",
-            volume: 1,
-            duration: 0.5,
-            velocity: 1,
-            loop: false,
-            padsSet: [1, 8],
-            looper: {}
-        }
-    }
     ],
     presets: [{
         name: "Type Showcase",
