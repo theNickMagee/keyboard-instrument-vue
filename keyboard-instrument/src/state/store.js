@@ -14,7 +14,6 @@ export const store = reactive({
                 velocity: 1,
                 loop: false,
                 padsSet: [1, 8],
-                looper: {}
             }
         },
         {
@@ -27,7 +26,8 @@ export const store = reactive({
                 attack: 0.1,
                 decay: 0.2,
                 sustain: 1.0,
-                release: 0.8
+                release: 0.8,
+                hz: "C1"
             }
         }
     ],

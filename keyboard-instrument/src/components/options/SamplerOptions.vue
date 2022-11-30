@@ -3,7 +3,6 @@ import { store } from '../../state/store.js'
 import { samplerTypes } from '../../assets/constants';
 import { keyOptions } from '../../assets/constants';
 import samplerServices from '../../services/samplerServices';
-import LooperOption from '../looper/LooperOption.vue';
 
 
 export default {
@@ -96,7 +95,6 @@ export default {
             }
         }
     },
-    components: { LooperOption }
 }
 </script>
 
@@ -132,8 +130,6 @@ export default {
         <!-- reverb (slider) -->
         <!-- bend (slider) -->
 
-        <!-- repeate every nth/16 note (element) -->
-        <LooperOption :parent='this.parent' />
     </div>
 </template>
 
