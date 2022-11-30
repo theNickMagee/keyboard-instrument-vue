@@ -25,6 +25,9 @@ export default {
         if (k) {
             if ((k.type === 'Frequency' || k.type === 'Sampler') && k.playing) {
                 k.playing = false;
+                if (k.type === 'Frequency') {
+                    // frequencyServices.stopFrequency(k);
+                }
             }
         }
     },

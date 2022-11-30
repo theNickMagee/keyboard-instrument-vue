@@ -4,7 +4,7 @@ import { reactive } from 'vue';
 export const store = reactive({
     keys: [
         {
-            key: "S",
+            key: "A",
             type: "Sampler",
             options: {
                 type: "Bongo Snare",
@@ -15,6 +15,19 @@ export const store = reactive({
                 loop: false,
                 padsSet: [1, 8],
                 looper: {}
+            }
+        },
+        {
+            key: "S",
+            type: "Frequency",
+            options: {
+                type: "triangle",
+                note: "C1",
+                volume: 1,
+                attack: 0.1,
+                decay: 0.2,
+                sustain: 1.0,
+                release: 0.8
             }
         }
     ],

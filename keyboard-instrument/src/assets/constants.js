@@ -5,6 +5,8 @@ const types = [
     { name: "Sampler" }, { name: "Frequency" }
 ]
 
+const frequencyTypes = [{ base: "sine" }, { base: "square" }, { base: "sawtooth" }, { base: "triangle" }, { base: "custom" }]
+
 // const samplerTypes = ["Casio", "Bongo Kick", "Bongo Snare"];
 import * as Tone from 'tone'
 
@@ -67,4 +69,4 @@ const samplerTypes = [{
     }).toDestination()
 }];
 
-export { keyOptions, types, samplerTypes }
+export { keyOptions, types, samplerTypes, frequencyTypes }

@@ -23,9 +23,78 @@ export default {
                 }
             });
         },
-        // onSamplerValueChanged(key, newVal) {
-        //     samplerServices.editSampler(this.parent.options.type, key, newVal);
-        // }
+        createScale(r) {
+
+            const keyRow1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+            const noteRow1 = ["C", "D", "E", "F", "G", "A", "B", "C", "D", "E"];
+
+            const keyRow2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
+            const noteRow2 = ["C", "D", "E", "F", "G", "A", "B", "C", "D"];
+
+            const keyRow3 = ["Z", "X", "C", "V", "B", "N", "M"];
+            const noteRow3 = ["C", "D", "E", "F", "G", "A", "B"];
+
+            let scaleNumber = this.parent.options.note.slice(-1);
+            let upperScale = parseInt(scaleNumber) + 1;
+            let sn;
+
+            switch (r) {
+
+
+                case 1:
+
+                    for (let i = 0; i < keyRow1.length; i++) {
+                        if (i > 6) {
+                            sn = upperScale;
+                        } else {
+                            sn = scaleNumber;
+                        }
+                        this.store.keys.push({
+                            ...this.parent,
+                            key: keyRow1[i],
+                            type: "Sampler",
+                            options: {
+                                ...this.parent.options,
+                                note: noteRow1[i] + sn,
+                            }
+                        })
+                    }
+                case 2:
+                    for (let i = 0; i < keyRow2.length; i++) {
+                        if (i > 6) {
+                            sn = upperScale;
+                        } else {
+                            sn = scaleNumber;
+                        }
+                        this.store.keys.push({
+                            ...this.parent,
+                            key: keyRow2[i],
+                            type: "Sampler",
+                            options: {
+                                ...this.parent.options,
+                                note: noteRow2[i] + sn,
+                            }
+                        })
+                    }
+                case 3:
+                    for (let i = 0; i < keyRow3.length; i++) {
+                        if (i > 6) {
+                            sn = upperScale;
+                        } else {
+                            sn = scaleNumber;
+                        }
+                        this.store.keys.push({
+                            ...this.parent,
+                            key: keyRow3[i],
+                            type: "Sampler",
+                            options: {
+                                ...this.parent.options,
+                                note: noteRow3[i] + sn,
+                            }
+                        })
+                    }
+            }
+        }
     },
     components: { LooperOption }
 }
@@ -41,7 +110,12 @@ export default {
             <option v-for="option in this.samplerTypes" :value="option.name">{{ option.name }}</option>
         </select>
         <!-- the note (input) -->
-        <input v-model="this.parent.options.note" @input="e => onNoteChange(e.target.value)" />
+        <div class="note-section">
+            <input v-model="this.parent.options.note" @input="e => onNoteChange(e.target.value)" />
+            <div class="main-button create-scale" v-on:click="createScale(1)">QWE</div>
+            <div class="main-button create-scale" v-on:click="createScale(2)">ASD</div>
+            <div class="main-button create-scale" v-on:click="createScale(3)">ZXC</div>
+        </div>
         <!-- volume (slider) -->
         <div>volume</div>
         <input type="range" min="-20" max="20" step="1" v-model="this.parent.options.volume" />
@@ -65,7 +139,17 @@ export default {
 
 
 <style scoped>
-.option-dd {
-    margin-top: 5px;
+.create-scale {
+    width: 20%;
+    height: 25px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+.note-section {
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
 }
 </style>
