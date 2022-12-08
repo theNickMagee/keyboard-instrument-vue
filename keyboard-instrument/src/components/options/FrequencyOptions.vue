@@ -122,36 +122,13 @@ export default {
             <div class="main-button create-scale" v-on:click="createScale(2)">ASD</div>
             <div class="main-button create-scale" v-on:click="createScale(3)">ZXC</div>
         </div>
-        <!-- volume -->
-        <!-- <div>
+
+        <div>
             Volume
             <input v-on:change="onChange()" type="range" min="-20" max="20" step="1"
                 v-model="this.parent.options.volume" />
-        </div> -->
-        <!-- attack -->
-        <div>
-            Attack
-            <input v-on:change="onChange()" type="range" min="0.01" max="15" step="0.01"
-                v-model="this.parent.options.attack" />
         </div>
-        <!-- sustain -->
-        <div>
-            Sustain
-            <input v-on:change="onChange()" type="range" min="0.01" max="1" step="0.01"
-                v-model="this.parent.options.sustain" />
-        </div>
-        <!-- decay -->
-        <div>
-            Decay
-            <input v-on:change="onChange()" type="range" min="0.01" max="5" step="0.01"
-                v-model="this.parent.options.decay" />
-        </div>
-        <!-- release -->
-        <div>
-            Release
-            <input v-on:change="onChange()" type="range" min="0.01" max="5" step="0.01"
-                v-model="this.parent.options.release" />
-        </div>
+
     </div>
 </template>
 
