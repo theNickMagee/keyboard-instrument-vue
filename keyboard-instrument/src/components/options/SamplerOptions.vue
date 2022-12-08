@@ -33,7 +33,7 @@ export default {
             const keyRow3 = ["Z", "X", "C", "V", "B", "N", "M"];
             const noteRow3 = ["C", "D", "E", "F", "G", "A", "B"];
 
-            let scaleNumber = this.parent.options.note.slice(-1);
+            let scaleNumber = this.parent.options.note.substring(1, this.parent.options.note.length);
             let upperScale = parseInt(scaleNumber) + 1;
             let sn;
 
