@@ -36,7 +36,6 @@ export default {
             const noteRow3 = ["C", "D", "E", "F", "G", "A", "B"];
 
             let scaleNumber = this.parent.options.hz.substring(1, this.parent.options.hz.length);
-            console.log("scaleNumber: ", scaleNumber)
             let upperScale = parseInt(scaleNumber) + 1;
             let sn;
 
