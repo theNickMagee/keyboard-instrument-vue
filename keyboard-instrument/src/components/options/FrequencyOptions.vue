@@ -23,6 +23,82 @@ export default {
         },
         onChange() {
             frequencyServices.updateSynth(this.parent.options);
+        },
+        createScale(r) {
+
+            const keyRow1 = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"];
+            const noteRow1 = ["C", "D", "E", "F", "G", "A", "B", "C", "D", "E"];
+
+            const keyRow2 = ["A", "S", "D", "F", "G", "H", "J", "K", "L"];
+            const noteRow2 = ["C", "D", "E", "F", "G", "A", "B", "C", "D"];
+
+            const keyRow3 = ["Z", "X", "C", "V", "B", "N", "M"];
+            const noteRow3 = ["C", "D", "E", "F", "G", "A", "B"];
+
+            let scaleNumber = this.parent.options.hz.substring(1, this.parent.options.hz.length);
+            console.log("scaleNumber: ", scaleNumber)
+            let upperScale = parseInt(scaleNumber) + 1;
+            let sn;
+
+            switch (r) {
+
+
+                case 1:
+
+                    for (let i = 0; i < keyRow1.length; i++) {
+                        if (i > 6) {
+                            sn = upperScale;
+                        } else {
+                            sn = scaleNumber;
+                        }
+                        this.store.keys.push({
+                            ...this.parent,
+                            key: keyRow1[i],
+                            type: "Frequency",
+                            options: {
+                                ...this.parent.options,
+                                hz: noteRow1[i] + sn,
+                            }
+                        })
+                    }
+                    break;
+                case 2:
+                    for (let i = 0; i < keyRow2.length; i++) {
+                        if (i > 6) {
+                            sn = upperScale;
+                        } else {
+                            sn = scaleNumber;
+                        }
+                        this.store.keys.push({
+                            ...this.parent,
+                            key: keyRow2[i],
+                            type: "Frequency",
+                            options: {
+                                ...this.parent.options,
+                                hz: noteRow2[i] + sn,
+                            }
+                        })
+                    }
+                    break;
+                case 3:
+                    for (let i = 0; i < keyRow3.length; i++) {
+                        if (i > 6) {
+                            sn = upperScale;
+                        } else {
+                            sn = scaleNumber;
+                        }
+                        this.store.keys.push({
+                            ...this.parent,
+                            key: keyRow3[i],
+                            type: "Frequency",
+                            options: {
+                                ...this.parent.options,
+                                hz: noteRow3[i] + sn,
+                            }
+                        })
+                    }
+                    break;
+            }
         }
     }
 }
@@ -40,6 +116,11 @@ export default {
         <div>
             <input v-on:change="onChange()" v-model="this.parent.options.hz"
                 @input="e => onFreqChange(e.target.value)" />
+        </div>
+        <div class="note-section">
+            <div class="main-button create-scale" v-on:click="createScale(1)">QWE</div>
+            <div class="main-button create-scale" v-on:click="createScale(2)">ASD</div>
+            <div class="main-button create-scale" v-on:click="createScale(3)">ZXC</div>
         </div>
         <!-- volume -->
         <!-- <div>
@@ -75,7 +156,19 @@ export default {
 </template>
 
 <style scoped>
+.create-scale {
+    width: 20%;
+    height: 25px;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
 
+.note-section {
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+}
 </style>
 
 

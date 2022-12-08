@@ -58,6 +58,7 @@ export default {
                             }
                         })
                     }
+                    break;
                 case 2:
                     for (let i = 0; i < keyRow2.length; i++) {
                         if (i > 6) {
@@ -75,6 +76,7 @@ export default {
                             }
                         })
                     }
+                    break;
                 case 3:
                     for (let i = 0; i < keyRow3.length; i++) {
                         if (i > 6) {
@@ -92,6 +94,8 @@ export default {
                             }
                         })
                     }
+                    break;
+
             }
         }
     },
