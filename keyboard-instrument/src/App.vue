@@ -4,6 +4,7 @@ import MainActions from './components/MainActions.vue';
 import KeyListener from './components/KeyListener.vue';
 import { store } from './state/store.js';
 import keyServices from './services/keyServices';
+import RecordSection from './components/record/RecordSection.vue';
 
 
 export default {
@@ -23,7 +24,7 @@ export default {
             // console.log("keyUp: ", details)
         }
     },
-    components: { KeyBindings, MainActions, KeyListener }
+    components: { KeyBindings, MainActions, KeyListener, RecordSection }
 }
 </script>
 
@@ -32,6 +33,7 @@ export default {
         <MainActions />
         <KeyBindings />
         <KeyListener v-on:keyup="keyUp" v-on:keydown="keyDown" />
+        <RecordSection />
     </main>
 </template>
 

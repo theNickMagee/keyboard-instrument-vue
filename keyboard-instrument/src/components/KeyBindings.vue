@@ -29,5 +29,7 @@ export default {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  border-bottom: 4px dotted var(--vt-c-divider-dark-1);
+
 }
 </style>
